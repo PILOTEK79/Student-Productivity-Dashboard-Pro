@@ -87,3 +87,67 @@ header p{
     font-size:2rem;
     font-weight:bold;
 }
+.task-section{
+    margin-top:40px;
+}
+
+.task-section h2{
+    margin-bottom:20px;
+}
+
+.task-form{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+.task-form input,
+.task-form select{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#1e293b;
+    color:white;
+}
+
+.task-form button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.task-item{
+    background:#1e293b;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:12px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.task-left{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.completed{
+    text-decoration:line-through;
+    opacity:0.6;
+}
+
+.delete-btn{
+    background:#ef4444;
+    border:none;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
