@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Productivity Dashboard Pro</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,23 +37,51 @@
 
             <div class="card">
                 <h3>📋 Tasks Pending</h3>
-                <p>5</p>
+                <p id="tasksCount">0</p>
             </div>
 
             <div class="card">
                 <h3>📚 Upcoming Exams</h3>
-                <p>2</p>
+                <p>0</p>
             </div>
 
             <div class="card">
                 <h3>⏱ Study Hours</h3>
-                <p>12</p>
+                <p>0</p>
             </div>
 
             <div class="card">
                 <h3>🎓 GPA</h3>
-                <p>3.75</p>
+                <p>0.00</p>
             </div>
+
+        </section>
+
+        <section class="task-section">
+
+            <h2>📋 Task Manager</h2>
+
+            <div class="task-form">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter Task"
+                >
+
+                <select id="priority">
+                    <option value="High">🔴 High</option>
+                    <option value="Medium">🟡 Medium</option>
+                    <option value="Low">🟢 Low</option>
+                </select>
+
+                <button onclick="addTask()">
+                    Add Task
+                </button>
+
+            </div>
+
+            <div id="taskList"></div>
 
         </section>
 
