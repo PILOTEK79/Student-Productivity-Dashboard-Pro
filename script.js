@@ -1,4 +1,3 @@
-alert("Script Loaded");
 let tasks =
 JSON.parse(localStorage.getItem("tasks")) || [];
 
