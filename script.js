@@ -1,3 +1,7 @@
+// ======================
+// TASK MANAGER
+// ======================
+
 let tasks =
 JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -37,7 +41,7 @@ function renderTasks(){
     const taskList =
         document.getElementById("taskList");
 
-    taskList.innerHTML="";
+    taskList.innerHTML = "";
 
     tasks.forEach((task,index)=>{
 
@@ -76,7 +80,7 @@ function renderTasks(){
         `;
     });
 
-    updateCounter();
+    updateTaskCounter();
 }
 
 function toggleTask(index){
@@ -96,20 +100,27 @@ function deleteTask(index){
     renderTasks();
 }
 
-function updateExamCounter(){
+function updateTaskCounter(){
 
-    const count = exams.length;
+    const pending =
+        tasks.filter(
+            task => !task.completed
+        ).length;
 
     document.getElementById(
-        "examCount"
-    ).innerText = count;
+        "tasksCount"
+    ).innerText = pending;
 }
 
-renderTasks();
+// ======================
+// EXAM TRACKER
+// ======================
+
 let exams =
 JSON.parse(localStorage.getItem("exams")) || [];
 
 function saveExams(){
+
     localStorage.setItem(
         "exams",
         JSON.stringify(exams)
@@ -144,6 +155,7 @@ function addExam(){
     date.value = "";
 
     saveExams();
+
     renderExams();
 }
 
@@ -189,6 +201,7 @@ function renderExams(){
             }
 
             <button
+            class="delete-btn"
             onclick="deleteExam(${index})">
 
             Delete
@@ -214,12 +227,14 @@ function deleteExam(index){
 
 function updateExamCounter(){
 
-    const count = exams.length;
-
-    document.querySelectorAll(
-        ".card p"
-    )[1].innerText = count;
+    document.getElementById(
+        "examCount"
+    ).innerText = exams.length;
 }
 
+// ======================
+// INITIAL LOAD
+// ======================
+
+renderTasks();
 renderExams();
-console.log("Exam Tracker Loaded");
