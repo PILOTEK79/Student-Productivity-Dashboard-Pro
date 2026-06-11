@@ -96,16 +96,13 @@ function deleteTask(index){
     renderTasks();
 }
 
-function updateCounter(){
+function updateExamCounter(){
 
-    const pending =
-        tasks.filter(
-            task => !task.completed
-        ).length;
+    const count = exams.length;
 
     document.getElementById(
-        "tasksCount"
-    ).innerText = pending;
+        "examCount"
+    ).innerText = count;
 }
 
 renderTasks();
