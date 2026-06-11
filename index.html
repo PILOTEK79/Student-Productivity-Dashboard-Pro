@@ -94,31 +94,26 @@
 <section class="exam-section">
 
     <h2>📚 Exam Tracker</h2>
+<div class="exam-form">
 
-    <div class="exam-form">
+    <input type="text"
+           id="examSubject"
+           placeholder="Subject Name">
 
-        <input
-            type="text"
-            id="examSubject"
-            placeholder="Subject Name"
-        >
+    <input type="date"
+           id="examDate">
 
-        <input
-            type="date"
-            id="examDate"
-        >
+    <select id="examPriority">
+        <option value="High">🔴 High</option>
+        <option value="Medium">🟡 Medium</option>
+        <option value="Low">🟢 Low</option>
+    </select>
 
-        <select id="examPriority">
-            <option value="High">🔴 High</option>
-            <option value="Medium">🟡 Medium</option>
-            <option value="Low">🟢 Low</option>
-        </select>
+    <button onclick="addExam()">
+        Add Exam
+    </button>
 
-        <button onclick="addExam()">
-            Add Exam
-        </button>
-
-    </div>
+</div>
 
     <div id="examList"></div>
 
