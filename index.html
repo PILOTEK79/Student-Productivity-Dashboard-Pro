@@ -1,32 +1,113 @@
-<!-- Exam Tracker -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Productivity Dashboard Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<section class="exam-section">
+<div class="container">
 
-    <h2>📚 Exam Tracker</h2>
+    <aside class="sidebar">
+        <h2>🎓 SPD Pro</h2>
 
-    <div class="exam-form">
+        <ul>
+            <li class="active">🏠 Dashboard</li>
+            <li>📋 Tasks</li>
+            <li>📚 Exams</li>
+            <li>🎯 Goals</li>
+            <li>🎓 GPA</li>
+            <li>⏱ Timer</li>
+            <li>📈 Analytics</li>
+        </ul>
+    </aside>
 
-        <input
-            type="text"
-            id="examSubject"
-            placeholder="Subject Name">
+    <main class="main-content">
 
-        <input
-            type="date"
-            id="examDate">
+        <header>
+            <h1>Student Productivity Dashboard Pro</h1>
+            <p>Track your studies, goals and performance.</p>
+        </header>
 
-        <select id="examPriority">
-            <option value="High">🔴 High</option>
-            <option value="Medium">🟡 Medium</option>
-            <option value="Low">🟢 Low</option>
-        </select>
+        <!-- Dashboard Cards -->
 
-        <button onclick="addExam()">
-            Add Exam
-        </button>
+        <section class="cards">
 
-    </div>
+            <div class="card">
+                <h3>📋 Tasks Pending</h3>
+                <p id="tasksCount">0</p>
+            </div>
 
-    <div id="examList"></div>
+            <div class="card">
+                <h3>📚 Upcoming Exams</h3>
+                <p id="examCount">0</p>
+            </div>
 
-</section>
+            <div class="card">
+                <h3>⏱ Study Hours</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card">
+                <h3>🎓 GPA</h3>
+                <p>0.00</p>
+            </div>
+
+        </section>
+
+        <!-- Task Manager -->
+
+        <section class="task-section">
+
+            <h2>📋 Task Manager</h2>
+
+            <div class="task-form">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter Task">
+
+                <select id="priority">
+                    <option value="High">🔴 High</option>
+                    <option value="Medium">🟡 Medium</option>
+                    <option value="Low">🟢 Low</option>
+                </select>
+
+                <button onclick="addTask()">
+                    Add Task
+                </button>
+
+            </div>
+
+            <div id="taskList"></div>
+
+        </section>
+
+        <!-- Exam Tracker -->
+
+        <section class="exam-section">
+
+            <h2>📚 Exam Tracker</h2>
+
+            <div class="exam-form">
+
+                <input
+                    type="text"
+                    id="examSubject"
+                    placeholder="Subject Name">
+
+                <input
+                    type="date"
+                    id="examDate">
+
+                <select id="examPriority">
+                    <option value="High">🔴 High</option>
+                    <option value="Medium">🟡 Medium</option>
+                    <option value="Low">🟢 Low</option>
+                </select>
+
+                <button onclick="addExam()">
+                   
