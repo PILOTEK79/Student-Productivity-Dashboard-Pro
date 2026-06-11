@@ -110,3 +110,119 @@ function updateCounter(){
 }
 
 renderTasks();
+let exams =
+JSON.parse(localStorage.getItem("exams")) || [];
+
+function saveExams(){
+    localStorage.setItem(
+        "exams",
+        JSON.stringify(exams)
+    );
+}
+
+function addExam(){
+
+    const subject =
+        document.getElementById("examSubject");
+
+    const date =
+        document.getElementById("examDate");
+
+    const priority =
+        document.getElementById("examPriority");
+
+    if(
+        subject.value.trim()==="" ||
+        date.value === ""
+    ){
+        return;
+    }
+
+    exams.push({
+        subject: subject.value,
+        date: date.value,
+        priority: priority.value
+    });
+
+    subject.value = "";
+    date.value = "";
+
+    saveExams();
+    renderExams();
+}
+
+function renderExams(){
+
+    const examList =
+        document.getElementById("examList");
+
+    examList.innerHTML = "";
+
+    exams.forEach((exam,index)=>{
+
+        const today = new Date();
+
+        const examDate =
+            new Date(exam.date);
+
+        const diffTime =
+            examDate - today;
+
+        const daysLeft =
+            Math.ceil(
+                diffTime /
+                (1000*60*60*24)
+            );
+
+        examList.innerHTML += `
+
+        <div class="exam-card">
+
+            <h3>📚 ${exam.subject}</h3>
+
+            <p>📅 ${exam.date}</p>
+
+            <p>${exam.priority} Priority</p>
+
+            <p>${daysLeft} Days Left</p>
+
+            ${
+                daysLeft <= 7
+                ? '<p class="warning">⚠️ Exam Soon</p>'
+                : ''
+            }
+
+            <button
+            onclick="deleteExam(${index})">
+
+            Delete
+
+            </button>
+
+        </div>
+
+        `;
+    });
+
+    updateExamCounter();
+}
+
+function deleteExam(index){
+
+    exams.splice(index,1);
+
+    saveExams();
+
+    renderExams();
+}
+
+function updateExamCounter(){
+
+    const count = exams.length;
+
+    document.querySelectorAll(
+        ".card p"
+    )[1].innerText = count;
+}
+
+renderExams();
