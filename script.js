@@ -238,3 +238,23 @@ function updateExamCounter(){
 
 renderTasks();
 renderExams();
+function addTask(){
+    // task code
+}
+
+function addExam(){
+    // exam code
+}
+
+// OTHER FUNCTIONS ABOVE...
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+
+        document.getElementById("loader")
+        .style.display="none";
+
+    },2000);
+
+});
