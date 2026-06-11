@@ -222,3 +222,4 @@ function updateExamCounter(){
 }
 
 renderExams();
+console.log("Exam Tracker Loaded");
