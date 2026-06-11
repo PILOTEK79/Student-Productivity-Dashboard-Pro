@@ -151,3 +151,44 @@ header p{
     border-radius:8px;
     cursor:pointer;
 }
+.exam-section{
+    margin-top:40px;
+}
+
+.exam-form{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.exam-form input,
+.exam-form select{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#1e293b;
+    color:white;
+}
+
+.exam-form button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.exam-card{
+    background:#1e293b;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+.warning{
+    color:#ef4444;
+    font-weight:bold;
+}
