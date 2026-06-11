@@ -192,3 +192,31 @@ header p{
     color:#ef4444;
     font-weight:bold;
 }
+.exam-section{
+    margin-top:40px;
+}
+
+.exam-form{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.exam-form input,
+.exam-form select{
+    background:#1e293b;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:12px;
+}
+
+.exam-form button{
+    background:#38bdf8;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:12px 20px;
+    cursor:pointer;
+}
